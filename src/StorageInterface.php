@@ -37,7 +37,7 @@ interface StorageInterface
      *
      * @return \Aws\ResultInterface
      */
-    public function copy($filename);    
+    public function copy($filename, $source);    
 
     /**
      * @param string $filename
