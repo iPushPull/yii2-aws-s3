@@ -35,6 +35,13 @@ interface StorageInterface
     /**
      * @param string $filename
      *
+     * @return \Aws\ResultInterface
+     */
+    public function copy($filename);    
+
+    /**
+     * @param string $filename
+     *
      * @return string
      */
     public function getCdnUrl($filename);

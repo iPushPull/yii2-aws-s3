@@ -133,6 +133,19 @@ class Storage extends Component implements StorageInterface
     /**
      * @inheritDoc
      */
+    public function copy($filename, $saveAs = null)
+    {
+        $args = $this->prepareArgs([
+            'Bucket' => $this->bucket,
+            'Key' => $filename,
+        ]);
+
+        return $this->execute('CopyObject', $args);
+    }    
+
+    /**
+     * @inheritDoc
+     */
     public function exist($filename, array $options = [])
     {
         return $this->getClient()->doesObjectExist($this->bucket, $filename, $options);
